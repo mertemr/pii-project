@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="particles-js">
+      <!-- setting section -->
+      <div>
+        <!-- settings section -->
+        <section class="lines" id="settingBtn">
+          <!-- lines-->
+          <div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </section>
+        <!-- setting detail -->
+        <div class="settingDetail hidden" id="settingDetail">
+          <div>
+            <p>Emeği geçenler</p>
+            <p style="color: orange;">Mert</p>
+            <p style="color: pink;">Eda</p>
+            <p style="color: red;">Oğuz</p>
+            <p style="color: green;">Özgür(me)</p>
+          </div>
+          <div style="border-top: 3px solid ;margin-top:5px;">
+            <p>versiyon</p>
+            <p>1.0.1</p>
+          </div>
+        </div>
+      </div>
+      <!-- content section -->
+      <section class="content">
+        <img src="src/img/pixil-frame-0 (2).png" alt="sula" id="waterBtn"/>
+        <!-- content detail -->
+        <div class="contentDetail">
+          <p>Nem Durumu : %<span> 30 </span></p>
+          <p>Son Sulamadan <span id="timeline"> 0 </span>sn geçti</p>
+        </div>
+      </section>
+    </div>
+    
+    <!-- javascripts -->
+    <script src="src/js/script.js"></script>
+    <!-- particles.js -->
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
