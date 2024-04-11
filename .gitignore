@@ -2,3 +2,4 @@ build/
 wifi-credentials.h
 .vscode/*
 !.vscode/arduino.json
+node_modules/
