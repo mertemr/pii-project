@@ -2,3 +2,4 @@ Yapılıcaklar:
 -Toastify ile bildirim eklenecek
 -ayarlar kısmına açılıp kapanmadaki logoların değişimi ile ilgilenilecek
 -Nem oranına göre resmin %'lik kısmına kadar olan kısım opacity alınıcak (yapılabilirse)
+-XMLHttpRequest ve fetchAPI ile modemsu'dan gelen veriler çekilecek, ana ekrana aktarılacak.
