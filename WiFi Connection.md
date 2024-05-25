@@ -1,6 +1,6 @@
 # How to connect to WiFi
-Create file named `./wifi-credentials.h` and put this lines in it:
+Create file named `./wifi-creds.py` and put this lines in it:
 ```c
-#define WIFI_SSID ssid_here
-#define WIFI_PASS password_here
+WIFI_SSID     = ssid_here
+WIFI_PASSWORD = password_here
 ```

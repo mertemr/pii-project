@@ -1,0 +1,13 @@
+{
+    "name": "pii-project",
+    "stubs": {
+        "esp8266-micropython-1.10.0": "1.2.0"
+    },
+    "dev-packages": {
+        "micropy-cli": "*"
+    },
+    "packages": {},
+    "config": {
+        "vscode": true
+    }
+}

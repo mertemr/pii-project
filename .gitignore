@@ -1,5 +1,2 @@
-build/
-wifi-credentials.h
-.vscode/*
-!.vscode/arduino.json
-node_modules/
+.venv/
+wifi_creds.py
