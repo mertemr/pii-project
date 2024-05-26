@@ -20,7 +20,7 @@ def readData():
     val: int = Pins.SENSOR_READ_PIN.read()
     val = map_range(val, 0, 1023, 0, 100)
     val = 100 - val
-    time.sleep(0.1)
+    time.sleep(0.05)
     Pins.LED_DATA_READ.off()
     return val
 
@@ -65,9 +65,13 @@ def main():
             data = conn.recv(1024)
             print("Data:\n", data)
             
-            if b'{run_pump:true}' in data:
+            if b'{"run_pump":true}' in data:
                 print("Forcing pump to run...")
-                conn.sendall(b"HTTP/1.1 200 OK\nContent-Type: application/json\nConnection: close\n\n")
+                response = "HTTP/1.1 200 OK\r\n"
+                response += "Content-Type: application/json\r\n"
+                response += "Connection: close\r\n\r\n"
+                response = response.encode()
+                conn.sendall(response)
                 conn.close()
                 runPump()
                 Pins.LED_WEB_SERVER.off()
@@ -86,9 +90,9 @@ def main():
         except OSError:
             pass
         
-        if val < 1:
-            runPump()
+        # if val < 1:
+        #     runPump()
         
-        time.sleep(1 / FREQ)
+        time.sleep(0.1)
 
 main()

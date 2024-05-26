@@ -9,7 +9,7 @@ class Pins:
     
     PUMP = Pin(0, Pin.OUT)  # D3
     
-FREQ = 2  # Run per second
+FREQ = 10  # Run per second
 
 # Default state
 Pins.LED_WIFI_CONNECTED.on()  # Turn off LED (active: LOW)
