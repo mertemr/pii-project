@@ -90,8 +90,8 @@ def main():
         except OSError:
             pass
         
-        # if val < 1:
-        #     runPump()
+        if val < 20:
+            runPump()
         
         time.sleep(0.1)
 
