@@ -5,8 +5,10 @@ const router = express.Router();
 
 API_URL = `http://${process.env.API_URL}`;
 
+let last_moisture_level = "Ölçülüyor...";
+
 router.get("/", (req, res) => {
-  return res.render("index.ejs", { moisture_level: "0" });
+  return res.render("index.ejs", { moisture_level: last_moisture_level });
 });
 
 router.get("/moisturelevel", (req, res) => {
@@ -20,7 +22,9 @@ router.get("/moisturelevel", (req, res) => {
     return response.json();
   })
   .then((data) => {
-    return res.json({ moisture_level: data.moisture_level });
+    let ml = data.moisture_level;
+    last_moisture_level = ml;
+    return res.json({ moisture_level: ml });
   })
   .catch((error) => {
     return res.redirect("/");
