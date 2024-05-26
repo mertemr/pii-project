@@ -3,6 +3,7 @@ const waterBtn = document.querySelector("#waterBtn");
 const settingBtn = document.querySelector("#settingBtn");
 const settingDetail = document.querySelector("#settingDetail");
 const moisture = document.querySelector("#moisture");
+const pumpBtn = document.querySelector("#pumpBtn");
 
 let time = 0;
 
@@ -40,3 +41,13 @@ setInterval(() => {
 }, 10000);
 
 update_moisture();
+
+waterBtn.style.opacity = 0.5;
+pumpBtn.disabled = true;
+setTimeout(function () {
+  pumpBtn.disabled = false;
+  waterBtn.style.opacity = 1;
+}, 5000); // 5000 milisaniye, yani 5 saniye
+
+
+
