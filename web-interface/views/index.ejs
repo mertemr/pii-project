@@ -42,7 +42,11 @@
       </div>
       <!-- content section -->
       <section class="content">
-        <img src="src/img/pixil-frame-0 (2).png" alt="sula" id="waterBtn" />
+        <form action="" method="post">
+          <button type="submit">
+            <img src="img/pixil-frame-0 (2).png" alt="sula" id="waterBtn" />
+          </button>
+        </form>
         <!-- content detail -->
         <div class="contentDetail">
           <p>Nem Durumu : %<span> 30 </span></p>
@@ -52,12 +56,9 @@
     </div>
 
     <!-- javascripts -->
-    <script>
-      document.getElementById('contentDetail').innerHTML = json.stringify(jsonResponse,null,2);
-    </script>
-    <script src="src/js/script.js"></script>
+    <script src="js/script.js"></script>
     <!-- particles.js -->
-    <script src="particles.js"></script>
-    <script src="app.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

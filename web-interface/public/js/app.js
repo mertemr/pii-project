@@ -35,7 +35,7 @@ particlesJS(
           nb_sides: 5,
         },
         image: {
-          src: "src/img/pixil-frame-0 (3).png",
+          src: "img/pixil-frame-0 (3).png",
           width: 100,
           height: 100,
         },
