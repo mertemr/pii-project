@@ -22,11 +22,12 @@ waterBtn.addEventListener("click", () => {
 
 function update_moisture() {
   fetch("/moisturelevel")
-  .then((response) => {
-    return response.text();
-  }).then((data) => {
-    moisture.innerHTML = JSON.parse(data).moisture_level;
-  });
+    .then((response) => {
+      return response.text();
+    })
+    .then((data) => {
+      moisture.innerHTML = JSON.parse(data).moisture_level;
+    });
 }
 
 setInterval(() => {
@@ -35,7 +36,7 @@ setInterval(() => {
 }, 1000);
 
 setInterval(() => {
-  update_moisture()
+  update_moisture();
 }, 10000);
 
 update_moisture();

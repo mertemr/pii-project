@@ -18,19 +18,19 @@ router.get("/moisturelevel", (req, res) => {
       "Content-Type": "application/json",
     },
   })
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    let ml = data.moisture_level;
-    last_moisture_level = ml;
-    return res.json({ moisture_level: ml });
-  })
-  .catch((error) => {
-    return res.redirect("/");
-  });
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      let ml = data.moisture_level;
+      last_moisture_level = ml;
+      return res.json({ moisture_level: ml });
+    })
+    .catch((error) => {
+      return res.redirect("/");
+    });
 });
-  
+
 router.post("/", (req, res) => {
   fetch(API_URL, {
     method: "POST",
@@ -38,8 +38,7 @@ router.post("/", (req, res) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ run_pump: true }),
-  })
-  .then((response) => {
+  }).then((response) => {
     console.log(response);
     if (response.ok) {
       return res.redirect("/");
