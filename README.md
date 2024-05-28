@@ -1,33 +1,54 @@
 # Plant Irrigation Integration project for the final project
 **Kayseri Üniversitesi BP. 2. Sınıf bitirme projesidir.**
 
-Nodemcu ESP8266 veya Arduino Uno geliştirme kartı kullanılarak  
+Nodemcu ESP8266 geliştirme kartı kullanılarak  
 çeşitli sensörler ile toprağın nemini takip edip belli bir  
 seviyenin altına düştüğünde otomatik sulayan sistem.  
 
 ## Kurulum aşaması
-ESP8266 içerisine MicroPython yüklenmeli.  
-`./src` içerisindeki dosyalar ESP8266 içerisine yüklenmeli.  
-
-`wifi_creds.py` dosyası içerisine wifi bilgileri girilmeli.
-```
+MicroPython'u ESP8266 içerisine kurun.  
+`./src/wifi_creds.py` dosyası açıp alttaki formatta wifi bilgilerinizi girin.  
+```python
 WIFI_SSID = "wifi_ismi"
 WIFI_PASSWORD = "wifi_sifresi"
 ```
-`config.py` içerisindeki pin bağlantıları yapılmalı.
+
+`config.py` dosyasındaki pin bağlantılarını yapın.  
+*(Aynı zamanda bu dosyadan bağlantıları değiştirebilirsiniz)*  
+
+`./src` içerisindeki dosyaları kartın içerisine yükleyin.  
+```bash
+cd src
+ampy -p COM_PORT put main.py
+ampy -p COM_PORT put config.py
+ampy -p COM_PORT put wifi_creds.py
+```
 
 ---
-Web sitesi için gerekli olan paketler yüklenmeli.
+Web sitesi için gerekli olan paketleri yükleyin.
 ```bash
+cd ./web-interface
 npm install
 ```
 
-`.env` dosyası içerisine port ESP8266'nın host ip bilgileri girilmeli.
-```
+`.env` dosyası açıp içerisine ESP8266'nın ip adresini yazın.
+```env
 API_URL=192.168.X.X
 ```
 ---
+## Çalıştırma
+ESP8266'yı çalıştırın. Wifi bilgileriniz doğru ise  
+üzerindeki LED yanacak ve okuma moduna geçecektir.
 
+Web sitesini çalıştırmak için aşağıdaki komutu çalıştırın.
+```bash
+cd ./web-interface
+npm start
+```
+Eğer her şey doğru yapıldıysa `http://localhost:3000` adresinden
+web sitesine erişebilirsiniz.
+
+---
 ### Özellikler
 * Web sitesi üstünden nem oranını takip edebilme
 * Web sitesi üstünden isteğe bağlı sulama yapabilme
