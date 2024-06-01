@@ -1,5 +1,5 @@
-# Plant Irrigation Integration project for the final project
-**Kayseri Üniversitesi BP. 2. Sınıf bitirme projesidir.**
+# PII - Plant Irrigation Integration
+**Kayseri Üniversitesi Bilgisayar Programcılığı 2. sınıf "Bilgisayarlı Kontrol" dersinin projesidir.**
 
 Nodemcu ESP8266 geliştirme kartı kullanılarak  
 çeşitli sensörler ile toprağın nemini takip edip belli bir  
