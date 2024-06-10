@@ -1,17 +1,12 @@
 import machine
 import network
 import time
-
-try:
-    import usocket as socket
-except ImportError:
-    import socket
+import usocket as socket
 
 from config import FREQ, Pins
 from wifi_creds import WIFI_SSID, WIFI_PASSWORD
 
 machine.freq(160000000)  # 160 MHz (max)
-
 
 def map_range(x, in_min, in_max, out_min, out_max):
     return (x - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
@@ -70,6 +65,7 @@ def main():
             data = conn.recv(1024)
             print("Data:\n", data)
 
+			# HTTP response (pompayı çalıştırma)
             if b'{"run_pump":true}' in data:
                 print("Forcing pump to run...")
                 response = "HTTP/1.1 200 OK\r\n"
@@ -82,6 +78,7 @@ def main():
                 Pins.LED_WEB_SERVER.off()
                 continue
 
+			# HTTP response (nem oranı)
             response = "HTTP/1.1 200 OK\r\n"
             response += "Content-Type: application/json\r\n"
             response += "Connection: close\r\n\r\n"
@@ -95,9 +92,8 @@ def main():
         except OSError:
             pass
 
-        if val < 20:
+        if val < 20: # nem yüzde 20'den azsa pompa çalıştır
             runPump()
-
         time.sleep(0.1)
 
 
